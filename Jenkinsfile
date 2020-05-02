@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Upload to AWS') {
             steps {
-              withAWS() {
+              withAWS(region:'us-east-1') {
                 s3Upload(file:'index.html', bucket:'test-static-website-jen', path:'index.html')
               }
             }
